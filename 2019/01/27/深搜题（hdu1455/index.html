@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="软件使用,">
+  <meta name="keywords" content="dfs,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="sublime简介sublime是一个文本编辑软件，相当于电脑自带的记事本，但因其有很高的颜值，深受人们喜爱，但作为程序员来讲，学会用sublime写代码是一件很赏心悦目的事情。 具体步骤编译器的安装如果你的电脑中带有vs，codeblock等软件，你需要找到一个名为GW的文件夹，并将它复制到C盘根目录下面如果你的电脑中没有编译软件，那么你需要在网上下载GW文件。 环境变量配置打开此电脑-属性-高">
-<meta name="keywords" content="软件使用">
+<meta name="description" content="题面Problem DescriptionGeorge took sticks of the same length and cut them randomly until all parts became at most 50 units long. Now he wants to return sticks to the original state, but he forgot how ma">
+<meta name="keywords" content="dfs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="将sublime用来写c&#x2F;c++程序">
-<meta property="og:url" content="https://github.com/yzhiwei/yzhiwei.github.io.git/2019/01/27/将sublime用来写c-c-程序/index.html">
+<meta property="og:title" content="深搜题（hdu1455)">
+<meta property="og:url" content="https://github.com/yzhiwei/yzhiwei.github.io.git/2019/01/27/深搜题（hdu1455/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="sublime简介sublime是一个文本编辑软件，相当于电脑自带的记事本，但因其有很高的颜值，深受人们喜爱，但作为程序员来讲，学会用sublime写代码是一件很赏心悦目的事情。 具体步骤编译器的安装如果你的电脑中带有vs，codeblock等软件，你需要找到一个名为GW的文件夹，并将它复制到C盘根目录下面如果你的电脑中没有编译软件，那么你需要在网上下载GW文件。 环境变量配置打开此电脑-属性-高">
+<meta property="og:description" content="题面Problem DescriptionGeorge took sticks of the same length and cut them randomly until all parts became at most 50 units long. Now he wants to return sticks to the original state, but he forgot how ma">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-27T10:07:14.371Z">
+<meta property="og:updated_time" content="2019-01-27T13:55:17.499Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="将sublime用来写c&#x2F;c++程序">
-<meta name="twitter:description" content="sublime简介sublime是一个文本编辑软件，相当于电脑自带的记事本，但因其有很高的颜值，深受人们喜爱，但作为程序员来讲，学会用sublime写代码是一件很赏心悦目的事情。 具体步骤编译器的安装如果你的电脑中带有vs，codeblock等软件，你需要找到一个名为GW的文件夹，并将它复制到C盘根目录下面如果你的电脑中没有编译软件，那么你需要在网上下载GW文件。 环境变量配置打开此电脑-属性-高">
+<meta name="twitter:title" content="深搜题（hdu1455)">
+<meta name="twitter:description" content="题面Problem DescriptionGeorge took sticks of the same length and cut them randomly until all parts became at most 50 units long. Now he wants to return sticks to the original state, but he forgot how ma">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/yzhiwei/yzhiwei.github.io.git/2019/01/27/将sublime用来写c-c-程序/">
+  <link rel="canonical" href="https://github.com/yzhiwei/yzhiwei.github.io.git/2019/01/27/深搜题（hdu1455/">
 
 
 
 
 
-  <title>将sublime用来写c/c++程序 | </title>
+  <title>深搜题（hdu1455) | </title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/yzhiwei/yzhiwei.github.io.git/yzhiwei.github.io/2019/01/27/将sublime用来写c-c-程序/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/yzhiwei/yzhiwei.github.io.git/yzhiwei.github.io/2019/01/27/深搜题（hdu1455/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yangzhiwei">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">将sublime用来写c/c++程序</h1>
+          <h1 class="post-title" itemprop="name headline">深搜题（hdu1455)</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-27T15:57:14+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-27T21:12:09+08:00">
                 2019-01-27
               </time>
             
@@ -314,7 +314,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  356
+                  1k
                 </span>
               
 
@@ -330,7 +330,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -351,34 +351,116 @@
       
 
       
-        <h1 id="sublime简介"><a href="#sublime简介" class="headerlink" title="sublime简介"></a>sublime简介</h1><p>sublime是一个文本编辑软件，相当于电脑自带的记事本，但因其有很高的颜值，深受人们喜爱，但作为程序员来讲，学会用sublime写代码是一件很赏心悦目的事情。</p>
-<h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><h2 id="编译器的安装"><a href="#编译器的安装" class="headerlink" title="编译器的安装"></a>编译器的安装</h2><p>如果你的电脑中带有vs，codeblock等软件，你需要找到一个名为GW的文件夹，并将它复制到C盘根目录下面<br>如果你的电脑中没有编译软件，那么你需要在网上下载GW文件。</p>
-<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>打开此电脑-属性-高级系统设置-环境变量-系统变量<br>将C:\MinGW64\bin加入到path中</p>
-<h2 id="sublime中的设置"><a href="#sublime中的设置" class="headerlink" title="sublime中的设置"></a>sublime中的设置</h2><p>依次打开tools-build system—new build system<br>输入以下代码：</p>
-<pre><code>{
-//&quot;shell_cmd&quot;: &quot;make&quot;
-&quot;working_dir&quot;: &quot;$file_path&quot;,
-&quot;cmd&quot;: &quot;gcc -Wall \&quot;$file_name\&quot; -o \&quot;$file_base_name\&quot;&quot;,
-&quot;file_regex&quot;: &quot;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&quot;,
-&quot;selector&quot;: &quot;source.c&quot;,
-&quot;variants&quot;: 
-[
-    {   
-    &quot;name&quot;: &quot;Run&quot;,
-        &quot;shell_cmd&quot;: &quot;gcc -Wall \&quot;$file\&quot; -o \&quot;$file_base_name\&quot; &amp;&amp; \&quot;${file_path}/${file_base_name}\&quot;&quot;
-    }
-]
-}
-</code></pre><p>ctrl+s 保存，名字随意就好</p>
-<h1 id="运行你的c-c-程序"><a href="#运行你的c-c-程序" class="headerlink" title="运行你的c/c++程序"></a>运行你的c/c++程序</h1><ol>
-<li>tools-build with</li>
-<li>ctrl shift b </li>
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>Problem Description<br>George took sticks of the same length and cut them randomly until all parts became at most 50 units long. Now he wants to return sticks to the original state, but he forgot how many sticks he had originally and how long they were originally. Please help him and design a program which computes the smallest possible original length of those sticks. All lengths expressed in units are integers greater than zero.</p>
+<p>Input<br>The input contains blocks of 2 lines. The first line contains the number of sticks parts after cutting, there are at most 64 sticks. The second line contains the lengths of those parts separated by the space. The last line of the file contains zero.</p>
+<p>Output<br>The output file contains the smallest possible length of original sticks, one per line.</p>
+<p>Sample Input<br>9<br>5 2 1 5 2 1 5 2 1<br>4<br>1 2 3 4<br>0</p>
+<p>Sample Output<br>6 5</p>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>给定n个已经被分割棒子的长度，如题面中的1，2，3，4.代表4个被分割绳子的长度，要求求出原绳子的最小长度（原绳子等长）即本题绳子长度为5，5=2+3，5=1+4</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>首先我们应该确定绳子的长度，绳子的最小长度应该为被分割绳子的最长长度，绳子的最大长度应该为被分割绳子的总长度<br>max（1，2，3，4）&lt;绳长&lt;sum(1,2,3,4)</p>
+<p>下面我们应该应该排除一些情况<br>1.sum=10，那么绳长就不应该是9，8，7，6，4，3<br>2.max=4，那么绳长就不应该是1，2，3<br>综合以上情况，绳长的可能性应该是9，8，7，6，4</p>
+<p>下面就应该是对绳子组合的一些具体排除<br>（要对绳子长度从大到小排序）</p>
+<ol>
+<li><p>如绳子长度为8，7，3，2<br>我们选取最小值为8，对于7而言，7+1=8，而在后面并没有出现1，此时，我们便可以排除8这一种情况。</p>
+</li>
+<li><p>若绳子长度为8，6，3，3<br>我们选取最小值为8，对于6而言，6+2=8；此时3不符合情况，对后面的3可以直接跳过</p>
+</li>
 </ol>
-<h1 id="一些可以改进的地方"><a href="#一些可以改进的地方" class="headerlink" title="一些可以改进的地方"></a>一些可以改进的地方</h1><h2 id="快捷键的设置"><a href="#快捷键的设置" class="headerlink" title="快捷键的设置"></a>快捷键的设置</h2><p>  许多人习惯了采用vs和dev这些编译器，希望只用一个f9便能够编译加运行，此时，我们在添加一行代码就好。</p>
-<pre><code>[
-{“keys”: [“f9”], “command”: “build”, “args”: {“variant”: “RunInCommand”}}
-]
-</code></pre>
+<p>#代码实现</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;stdio.h&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int n,cnt,sum;//n表示木棍的数量，sum表示n个木棍的总长度，cnt=sum/i;
+struct node
+{
+  int lenth ;// 木棍的长度
+  int mark; //标记这根木棍是否被用过;
+ }stick[66];             
+int cmp(node a,node b) //按长度从大到小排序
+{
+ return a.lenth&gt;b.lenth;
+}                        //比较排序
+//len为当前木棒的长度，count统计当前长度木棒的数量，
+int dfs(int len,int count,int l,int pos)
+{
+if(len==sum) return 1; //递归出口
+if(count==cnt)   return 1; //这个写不写都无所谓，上面一行就ok
+for(int i=pos;i&lt;n;i++)
+{           
+  if(stick[i].mark)continue; //如果木棍被标记过，跳过去
+  if(len==(stick[i].lenth+l))
+  {
+      stick[i].mark=1;  //修改标记
+      if(dfs(len,count+1,0,0))  return 1;
+      stick[i].mark=0;  //标记还原
+      return 0;
+  }
+  else if(len&gt;(stick[i].lenth+l))
+  {
+      stick[i].mark=1;
+      l+=stick[i].lenth;
+      if(dfs(len,count,l,i+1))
+         return 1;
+      l-=stick[i].lenth;  //如果不能拼接，那么就恢复
+      stick[i].mark=0;
+      if(l==0) return 0;
+      while(stick[i].lenth==stick[i+1].lenth)i++;  //这是一条非常重要的剪枝，可以极大的降低时间复杂度
+ return 0;
+}
+int main()
+{
+    while(cin&gt;&gt;n&amp;&amp;n) 
+    {
+       cnt=sum=0;
+       for(int i=0;i&lt;n;i++)
+       {
+           cin&gt;&gt;stick[i].lenth;
+           sum+=stick[i].lenth;
+           stick[i].mark=0; //初始标记为0
+       }
+       sort(stick,stick+n,cmp); //对长度进行排序
+       for(int i=stick[0].lenth;i&lt;=sum;i++)
+       {
+          if(sum%i)continue; //对长度进行选择
+          cnt=sum/i;  
+          if(dfs(i,0,0,0))
+          {
+             printf(&quot;%d\n&quot;,i);
+             break;
+          }
+       }
+    }
+    return 0;
+}
+</code></pre><h1 id="dfs最关键的代码结构块"><a href="#dfs最关键的代码结构块" class="headerlink" title="dfs最关键的代码结构块"></a>dfs最关键的代码结构块</h1><pre><code>void dfs()//参数用来表示状态  
+{  
+if(到达终点状态)  
+{  
+    ...//根据题意添加  
+    return;  
+}  
+if(越界或者是不合法状态)  
+    return;  
+if(特殊状态)//剪枝
+    return ;
+for(扩展方式)  
+{  
+    if(扩展方式所达到状态合法)  
+    {  
+        修改操作;//根据题意来添加  
+        标记；  
+        dfs（）；  
+        (还原标记)；  
+        //是否还原标记根据题意  
+        //如果加上（还原标记）就是 回溯法  
+    }  
+
+}  
+}  
+</code></pre><h1 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h1><p>这是做过的第一道深搜题，还是不能够完全理解递归的过程。dfs题型很多，需要多多总结。</p>
+<p>sort排序的一种新形式get</p>
+
       
     </div>
     
@@ -395,7 +477,7 @@
       
         <div class="post-tags">
           
-            <a href="/yzhiwei.github.io/tags/软件使用/" rel="tag"># 软件使用</a>
+            <a href="/yzhiwei.github.io/tags/dfs/" rel="tag"># dfs</a>
           
         </div>
       
@@ -408,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/yzhiwei.github.io/2019/01/24/写于博客建成之后/" rel="next" title="写于博客建成之后">
-                <i class="fa fa-chevron-left"></i> 写于博客建成之后
+              <a href="/yzhiwei.github.io/2019/01/27/将sublime用来写c-c-程序/" rel="next" title="将sublime用来写c/c++程序">
+                <i class="fa fa-chevron-left"></i> 将sublime用来写c/c++程序
               </a>
             
           </div>
@@ -417,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/yzhiwei.github.io/2019/01/27/深搜题（hdu1455/" rel="prev" title="深搜题（hdu1455)">
-                深搜题（hdu1455) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -561,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime简介"><span class="nav-number">1.</span> <span class="nav-text">sublime简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体步骤"><span class="nav-number">2.</span> <span class="nav-text">具体步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译器的安装"><span class="nav-number">2.1.</span> <span class="nav-text">编译器的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量配置"><span class="nav-number">2.2.</span> <span class="nav-text">环境变量配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sublime中的设置"><span class="nav-number">2.3.</span> <span class="nav-text">sublime中的设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行你的c-c-程序"><span class="nav-number">3.</span> <span class="nav-text">运行你的c/c++程序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些可以改进的地方"><span class="nav-number">4.</span> <span class="nav-text">一些可以改进的地方</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快捷键的设置"><span class="nav-number">4.1.</span> <span class="nav-text">快捷键的设置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题面"><span class="nav-number">1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题意"><span class="nav-number">2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分析"><span class="nav-number">3.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dfs最关键的代码结构块"><span class="nav-number">4.</span> <span class="nav-text">dfs最关键的代码结构块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思考"><span class="nav-number">5.</span> <span class="nav-text">思考</span></a></li></ol></div>
             
 
           </div>
