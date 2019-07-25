@@ -382,19 +382,15 @@
       
         
           
-            <h1 id="卸载默认的渲染引擎"><a href="#卸载默认的渲染引擎" class="headerlink" title="卸载默认的渲染引擎"></a>卸载默认的渲染引擎</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
-<h1 id="安装hexo-renderer-kramed引擎"><a href="#安装hexo-renderer-kramed引擎" class="headerlink" title="安装hexo-renderer-kramed引擎"></a>安装hexo-renderer-kramed引擎</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
-<h1 id="改变文件配置"><a href="#改变文件配置" class="headerlink" title="改变文件配置"></a>改变文件配置</h1><p>打开<strong>/node_modules/hexo-renderer-kramed/lib/renderer.js</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">    // Fit kramed&apos;s rule: $$ + \1 + $$</span><br><span class="line">    return text.replace(/`\$(.*?)\$`/g, &apos;$$$$$1$$$$&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">为，直接返回text</span><br><span class="line"></span><br><span class="line">// Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="卸载hexo-math"><a href="#卸载hexo-math" class="headerlink" title="卸载hexo-math"></a>卸载hexo-math</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-math --save</span><br></pre></td></tr></table></figure>
-<h1 id="安装hexo-renderer-mathjax包"><a href="#安装hexo-renderer-mathjax包" class="headerlink" title="安装hexo-renderer-mathjax包"></a>安装hexo-renderer-mathjax包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure>
-<h1 id="更改默认转义规则"><a href="#更改默认转义规则" class="headerlink" title="更改默认转义规则"></a>更改默认转义规则</h1><p>reason：latex语法与markdown语法有冲突</p>
-<p>打开<strong>/node_modules\kramed\lib\rules\inline.js</strong></p>
-<p>将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">改为</span><br><span class="line">escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">改为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>需要letex公式时，在头部加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax： true</span><br></pre></td></tr></table></figure></p>
-
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/yzhiwei.github.io/2019/07/22/使用mathjax渲染latex公式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -548,40 +544,15 @@
       
         
           
-            <h1 id="上下标，分数和根号"><a href="#上下标，分数和根号" class="headerlink" title="上下标，分数和根号"></a>上下标，分数和根号</h1><p>下标<code>_</code>  <script type="math/tex">X_2</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$X_2$$</span><br></pre></td></tr></table></figure></p>
-<p>上标<code>^</code>  <script type="math/tex">X^2</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$X^2$$</span><br></pre></td></tr></table></figure></p>
-<p>混合使用  <script type="math/tex">x^2_5</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x^2_5$$</span><br></pre></td></tr></table></figure></p>
-<p>分数<code>frac</code>  <script type="math/tex">\frac{3}{5}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;3&#125;&#123;5&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>根号 <code>sqrt</code> <script type="math/tex">\sqrt[4]{5}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt[4]&#123;5&#125;$$</span><br></pre></td></tr></table></figure></p>
-<h1 id="常用的运算符"><a href="#常用的运算符" class="headerlink" title="常用的运算符"></a>常用的运算符</h1><p>加减<code>\pm</code>  <script type="math/tex">{x}\pm{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\pm&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>乘 <code>\times</code> <script type="math/tex">{x}\times{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\times&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>除 <code>\div</code>   <script type="math/tex">{x}\div{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\div&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>点乘 <code>\cdot</code> <script type="math/tex">{x}\cdot{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\cdot&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>大于等于 <code>\geq</code> <script type="math/tex">{x}\geq{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\geq&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>小于等于 <code>\leq</code> <script type="math/tex">{x}\leq{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\leq&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>不等于 <code>\neq</code> <script type="math/tex">{x}\neq{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\neq&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>约等于 <code>\approx</code> <script type="math/tex">{x}\approx{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\approx&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>恒等于 <code>\equiv</code>  <script type="math/tex">{x}\equiv{y}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$&#123;x&#125;\equiv&#123;y&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>累加 <code>\sum</code> <script type="math/tex">\sum_{i=0}^{n}{(x_i+y_i)}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sum_&#123;i=0&#125;^&#123;n&#125;&#123;(x_i+y_i)&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>累乘 <code>\prod</code> <script type="math/tex">\prod_{i=1}^{n}{x_i}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\prod_&#123;i=1&#125;^&#123;n&#125;&#123;x_i&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>求极限 <code>\lim</code> <script type="math/tex">\lim_{x\to0}{x}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_&#123;x\to0&#125;&#123;x&#125;$$</span><br></pre></td></tr></table></figure></p>
-<p>求积分 <code>\int</code> <script type="math/tex">\int_{a}^{b}{f(x)}</script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_&#123;a&#125;^&#123;b&#125;&#123;f(x)&#125;$$</span><br></pre></td></tr></table></figure></p>
-<h1 id="矩阵与行列式"><a href="#矩阵与行列式" class="headerlink" title="矩阵与行列式"></a>矩阵与行列式</h1><p>矩阵</p>
-<script type="math/tex; mode=display">\begin{matrix}
-1&&2&&3\\
-4&&5&&6
-\end{matrix}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;matrix&#125;</span><br><span class="line">1&amp;&amp;2&amp;&amp;3\\</span><br><span class="line">4&amp;&amp;5&amp;&amp;6</span><br><span class="line">\end&#123;matrix&#125;$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">\begin{bmatrix}
-1&&2&&3\\
-4&&5&&6
-\end{bmatrix}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;bmatrix&#125;</span><br><span class="line">1&amp;&amp;2&amp;&amp;3\\</span><br><span class="line">4&amp;&amp;5&amp;&amp;6</span><br><span class="line">\end&#123;bmatrix&#125;$$</span><br></pre></td></tr></table></figure>
-<p>行列式</p>
-<script type="math/tex; mode=display">\begin{vmatrix}
-1&&2&&3\\
-4&&5&&6
-\end{vmatrix}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;bmatrix&#125;</span><br><span class="line">1&amp;&amp;2&amp;&amp;3\\</span><br><span class="line">4&amp;&amp;5&amp;&amp;6</span><br><span class="line">\end&#123;bmatrix&#125;$$</span><br></pre></td></tr></table></figure>
-
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/yzhiwei.github.io/2019/07/22/公式测试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -692,7 +663,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  96
+                  71
                 </span>
               
 
@@ -888,20 +859,15 @@
       
         
           
-            <p>题目链接： <a href="https://ac.nowcoder.com/acm/contest/881#question" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/881#question</a></p>
-<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><img src="https://s2.ax1x.com/2019/07/18/Zj8klj.md.png" alt="a"><br><img src="https://s2.ax1x.com/2019/07/18/Zj8m7V.md.png" alt="b"></p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这道题要求两个数组中最小值的下标相等，求最大值p<br>可以使用单调栈来维护，分别维护序号和值</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 100005</span></span><br><span class="line"><span class="keyword">int</span> a[maxn],b[maxn];  <span class="comment">//记录初始两个数组</span></span><br><span class="line"><span class="keyword">int</span> l1[maxn],l2[maxn]; <span class="comment">//记录最小数的id</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">&#125;s[maxn];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> *c,<span class="keyword">int</span> *l)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> top=<span class="number">0</span>;</span><br><span class="line">    s[<span class="number">0</span>]=&#123;<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(top&amp;&amp;s[top].val&gt;c[i])</span><br><span class="line">            top--;</span><br><span class="line">        l[i]=s[top].id;</span><br><span class="line">        s[++top]=node&#123;i,c[i]&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;b[i];</span><br><span class="line">        <span class="keyword">int</span> ans=n;</span><br><span class="line">        solve(a,l1);</span><br><span class="line">        solve(b,l2);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(l1[i]!=l2[i])&#123;</span><br><span class="line">                ans=i<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p><img src="https://s2.ax1x.com/2019/07/23/ekbuRK.md.png" alt="1"></p>
-<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>一开始这个题想偏了，原来是AB中可以插入BA，BA中可以插入AB。<br>看了部分博客，大部分都是用dp做的，状态转移方程都写的不太一样<br>但总体都遵循这样的原则<br>假设有i个A，j个B<br>那么num(AB）=num(A)-num(B)<br>    num(BA) =num(B)-num(A)<br>所以<script type="math/tex">{i-j}\leq{n}</script></p>
-<script type="math/tex; mode=display">{j-i}\leq{m}</script><p>状态转移方程 <code>dp[i][j]+=dp[i][j-1]</code>;<br>            <code>dp[i][j]+=dp[i-1][j]</code>;</p>
-<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">2e3</span>+<span class="number">5</span>;</span><br><span class="line">ll dp[maxn][maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n+m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n+m;j++)&#123;</span><br><span class="line">                dp[i][j]=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n+m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n+m;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i-j&lt;n)&#123;</span><br><span class="line">                    dp[i+<span class="number">1</span>][j]=(dp[i+<span class="number">1</span>][j]+dp[i][j])%mod;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(j-i&lt;m)&#123;</span><br><span class="line">                    dp[i][j+<span class="number">1</span>]=(dp[i][j+<span class="number">1</span>]+dp[i][j])%mod;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;dp[n+m][n+m]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll x1,y1,x2,y2,x3,y3;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;x1&gt;&gt;y1&gt;&gt;x2&gt;&gt;y2&gt;&gt;x3&gt;&gt;y3)&#123;     </span><br><span class="line">          ll s=<span class="number">11</span>/<span class="number">2</span>*<span class="built_in">abs</span>(x1*y2 + x2*y3 + x3*y1 - x1*y3 - x2*y1 - x3*y2);</span><br><span class="line">          <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="G"><a href="#G" class="headerlink" title="G"></a>G</h1><h1 id="H"><a href="#H" class="headerlink" title="H"></a>H</h1><h1 id="I"><a href="#I" class="headerlink" title="I"></a>I</h1><h1 id="j"><a href="#j" class="headerlink" title="j"></a>j</h1><h2 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h2><p><img src="https://s2.ax1x.com/2019/07/18/ZjMoG9.md.png" alt="1"></p>
-<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>先比较整数部分，然后比较小数部分，小数部分采用取模的方式表示，比较的时候采用交叉相乘的方式。</p>
-<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll x,a,y,b;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;a&gt;&gt;y&gt;&gt;b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x/a&gt;y/b)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"&gt;"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(x/a&lt;y/b)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"&lt;"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>((x%a)*b&gt;(y%b)*a)&#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="string">"&gt;"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>((x%a)*b&lt;(y%b)*a)&#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="string">"&lt;"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>((x%a)*b==(y%b)*a)&#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;<span class="string">"="</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/yzhiwei.github.io/2019/07/18/牛客多校第一场/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1051,175 +1017,15 @@
       
         
           
-            <h1 id="计算机系统概论"><a href="#计算机系统概论" class="headerlink" title="计算机系统概论"></a>计算机系统概论</h1><h2 id="计算机的性能指标"><a href="#计算机的性能指标" class="headerlink" title="计算机的性能指标"></a>计算机的性能指标</h2><p>吞吐量 一台计算机在某一时间间隔内能够处理的信息量</p>
-<p>响应时间 从输入有效到系统产生响应之间的时间度量</p>
-<p>利用率 在给定的时间间隔内系统被实际使用的时间所占的比率。用百分比来表示</p>
-<p>处理机字长 指处理机运算器中一次能够完成二进制数运算的位数</p>
-<p>总线宽度  cpu运算器与存储器之间进行互连的内部总线二进制位数</p>
-<p>存储器容量 存储器中所有存储单元的总数目。通常用KB，MB表示</p>
-<p>存储器带宽 单位时间内从存储器读出的二进制数信息量</p>
-<p>主频/时钟周期 主时钟的频率教cpu的主频</p>
-<p>cpu执行时间 表示CPU执行一般程序占用的CPU时间<br> CPU执行时间=CPU时钟周期数 CPU时钟周期</p>
-<p>CPI 每条指令周期数</p>
-<h2 id="硬件组成要素"><a href="#硬件组成要素" class="headerlink" title="硬件组成要素"></a>硬件组成要素</h2><p>运算器 进行算术运算和逻辑运算</p>
-<p>控制器 控制计算机各部件有条不紊的工作</p>
-<p>存储器 储存0，1代码</p>
-<p>输入设备与输出设备</p>
-<h2 id="多级组成的计算机系统"><a href="#多级组成的计算机系统" class="headerlink" title="多级组成的计算机系统"></a>多级组成的计算机系统</h2><p>微程序设计级   直接由硬件执行</p>
-<p>一般机器级     微程序</p>
-<p>操作系统级     操作系统</p>
-<p>汇编语言级     汇编程序</p>
-<p>高级语言级     编译程序</p>
-<h1 id="运算方法和运算器"><a href="#运算方法和运算器" class="headerlink" title="运算方法和运算器"></a>运算方法和运算器</h1><h2 id="流水线"><a href="#流水线" class="headerlink" title="流水线"></a>流水线</h2><h1 id="多层次的存储器"><a href="#多层次的存储器" class="headerlink" title="多层次的存储器"></a>多层次的存储器</h1><h2 id="存储器的分级"><a href="#存储器的分级" class="headerlink" title="存储器的分级"></a>存储器的分级</h2><p>Why  在一个存储器中同时兼顾容量大，速度快，成本低是困难的。</p>
-<p>高速缓存存储器（cache） 高速存取指令和数据，存取速度快，但存储容量小</p>
-<p>主存储器 存放计算机运行期间的大量程序和数据。和cache能交换数据和指令。</p>
-<p>外存储器 大容量辅助存储器 存储容量大，位成本低，通常用来存放系统程序和大型数据文件及数据库</p>
-<h2 id="主存储器的性能指标"><a href="#主存储器的性能指标" class="headerlink" title="主存储器的性能指标"></a>主存储器的性能指标</h2><p>字存储单元 存放一个机器字的存储单元。 相应的单元地址叫字地址。</p>
-<p>字节存储单元 存放一个字节的单元 ，相应的地址为字节地址，</p>
-<p>存储容量 一个存储器中可以容纳的存储单元总数。一个字节为8个2进制位</p>
-<p>存储时间 存储器访问时间，指一次读操作命令发出到该操作完成，将数据读出到数据总线上所经历的时间。</p>
-<p>存储周期 指连续启动两次读操作所需间隔的最小时间。</p>
-<p>存储器带宽 单位时间内存储器所存取的信息量。</p>
-<h2 id="存储器容量的扩充"><a href="#存储器容量的扩充" class="headerlink" title="存储器容量的扩充"></a>存储器容量的扩充</h2><p>1.字长位数扩展</p>
-<p>2.字存储容量扩展</p>
-<h2 id="多模块交叉存储器"><a href="#多模块交叉存储器" class="headerlink" title="多模块交叉存储器"></a>多模块交叉存储器</h2><p>地址在模块中安排方式有两种：顺序方式，交叉方式。</p>
-<p>在顺序方式中，某个模块进行存取时，其他模块不工作。当某一模块出现故障时，其他模块可以照常工作。缺点就是各模块一个接一个串行工作，因此存储器的带宽受到了限制。</p>
-<p>交叉方式的存储器可以实现多模块流水式并行存取，大大提高存储器的带宽</p>
-<h2 id="cache基本原理"><a href="#cache基本原理" class="headerlink" title="cache基本原理"></a>cache基本原理</h2><p>解决cpu与主存之间速度不匹配</p>
-<p>三个计算</p>
-<p>1.命中率<br>h=Nc/(Nc+Nm)</p>
-<p>2.平均访问时间<br>Ta=hTc+（1-h)Tm</p>
-<p>3.访问效率<br>e=1/(r+(1-r)h)<br>r=Tm/Tc</p>
-<h2 id="主存与cache的地址映射"><a href="#主存与cache的地址映射" class="headerlink" title="主存与cache的地址映射"></a>主存与cache的地址映射</h2><p><strong>主存块大小与cache行大小相同</strong></p>
-<h3 id="直接映射方式"><a href="#直接映射方式" class="headerlink" title="直接映射方式"></a>直接映射方式</h3><p><img src="https://s2.ax1x.com/2019/07/08/ZrDyND.png" alt="直接"></p>
-<p><strong>内存地址格式</strong> 标记 行 字地址</p>
-<h3 id="全相联映射"><a href="#全相联映射" class="headerlink" title="全相联映射"></a>全相联映射</h3><p><img src="https://s2.ax1x.com/2019/07/08/ZrsSsI.png" alt="全相联"></p>
-<p><strong>内存地址格式</strong> 标记 字地址</p>
-<h3 id="组相联映射"><a href="#组相联映射" class="headerlink" title="组相联映射"></a>组相联映射</h3><p><img src="https://s2.ax1x.com/2019/07/08/Zrs6ld.png" alt="组相联"></p>
-<p><strong>内存地址格式</strong> 标记 组号 字地址</p>
-<h2 id="替换策略"><a href="#替换策略" class="headerlink" title="替换策略"></a>替换策略</h2><h3 id="最不经常使用（LFU）算法"><a href="#最不经常使用（LFU）算法" class="headerlink" title="最不经常使用（LFU）算法"></a>最不经常使用（LFU）算法</h3><p>设置计时器，从0开始技术，每访问一次，被访问的计数器增1，将一段时间内被访问次数最少的那行数据换出。</p>
-<p>不能严格反映近期访问情况。</p>
-<h3 id="近期最少使用（LRU）算法"><a href="#近期最少使用（LRU）算法" class="headerlink" title="近期最少使用（LRU）算法"></a>近期最少使用（LRU）算法</h3><p>将近期内长久未被访问的行换出</p>
-<p>Cache每命中一次，命中行计数器清0，其他各行计数器增1，当需要替换时，将计数器最大的行换出。</p>
-<p>使cache有较高的命中率</p>
-<h3 id="随机替换"><a href="#随机替换" class="headerlink" title="随机替换"></a>随机替换</h3><p>从特定的行位置中随机的选取一行换出即可。</p>
-<p>优点：在硬件上容易实现，且速度也比前两种快。</p>
-<p>缺点：随意换出的数据很可能很快就被使用，从而降低命中率和cache工作效率</p>
-<h1 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h1><h2 id="指令格式"><a href="#指令格式" class="headerlink" title="指令格式"></a>指令格式</h2><p>指令字用二进制代码表示的结构形式。由操作码字段和地址码字段组成。</p>
-<p>操作码OP字段表征指令的操作特性与功能。<br>地址码A字段通常指定参与操作数的地址。</p>
-<p>操作码<br>组成操作码字段的位数一般取决与计算机指令系统的规模。</p>
-<p>地址码<br>根据一个指令中有几个操作数地址，可将该指令称为几操作数指令或几地址指令。</p>
-<p>二地址指令格式中<br>存储器-存储器（SS）型指令 访问内存的指令格式。操作时都是涉及内存单元。<br>寄存器-寄存器（RR）型指令 访问寄存器的指令格式。<br>寄存器-存储器（RS）型指令 既要访问内存单元，又要访问寄存器。</p>
-<p>指令字长度<br>一个指令字中包含二进制代码的位数。<br>分为单字长指令，半字长指令，双字长指令</p>
-<p>分析指令格式的特点</p>
-<ol>
-<li>什么字长什么地址指令 （单字长二地址指令）</li>
-<li>操作码字段op可以指定的指令数</li>
-<li>分析指令</li>
-</ol>
-<h2 id="指令和数据的寻址方式"><a href="#指令和数据的寻址方式" class="headerlink" title="指令和数据的寻址方式"></a>指令和数据的寻址方式</h2><h3 id="指令的寻址方式"><a href="#指令的寻址方式" class="headerlink" title="指令的寻址方式"></a>指令的寻址方式</h3><h4 id="顺序寻址方式"><a href="#顺序寻址方式" class="headerlink" title="顺序寻址方式"></a>顺序寻址方式</h4><p>程序依次执行的过程</p>
-<h4 id="跳跃寻址方式"><a href="#跳跃寻址方式" class="headerlink" title="跳跃寻址方式"></a>跳跃寻址方式</h4><p>当程序转移执行的顺序时，采用跳跃寻址方式。所谓跳跃，是指下条指令的地址码不是由程序计数器给出，而是由本条指令给出。</p>
-<h3 id="操作数的寻址方式"><a href="#操作数的寻址方式" class="headerlink" title="操作数的寻址方式"></a>操作数的寻址方式</h3><p>形成操作数的有效方法，称为操作数的寻址方式<br>隐含寻址<br>不是明显的给出操作数的地址，而是在指令中隐含着操作数的地址</p>
-<p>立即寻址<br>指令的地址阶段不是操作数的地址，而是操作数本身</p>
-<p>直接寻址<br>在指令格式的地址字段中直接指出操作数在内存中的地址A</p>
-<p>间接寻址<br>形式地址A不是操作数A的真正地址，而是操作数地址的指示器</p>
-<p>寄存器寻址 当操作数不在内存中，而是放在cpu的通用寄存器中时，可采用寄存器寻址方式</p>
-<p>寄存器间接寻址<br>指令格式中的寄存器内容不是操作数，而是操作数的地址</p>
-<p>偏移寻址 直接寻址和寄存器间接寻址方式的结合<br>EA=A+（R）<br>相对寻址<br>基址寻址<br>变址寻址</p>
-<p>段寻址方式</p>
-<p>堆栈寻址<br>寄存器堆栈和存储器堆栈</p>
-<h1 id="中央处理器"><a href="#中央处理器" class="headerlink" title="中央处理器"></a>中央处理器</h1><h2 id="cpu的功能"><a href="#cpu的功能" class="headerlink" title="cpu的功能"></a>cpu的功能</h2><p>指令控制 程序的顺序控制</p>
-<p>操作控制 控制部件按指令的要求进行工作</p>
-<p>时间控制 对各种操作实施时间上的定时</p>
-<p>数据加工 对数据进行算术运算和逻辑运算处理</p>
-<h2 id="cpu中的主要寄存器"><a href="#cpu中的主要寄存器" class="headerlink" title="cpu中的主要寄存器"></a>cpu中的主要寄存器</h2><p>数据缓冲寄存器（DR）<br>暂时存放ALU的运算结果</p>
-<p>指令寄存器（IR）<br>用来保存当前正在执行的一条指令</p>
-<p>程序计数器（PC）<br>确定下一条指令的地址</p>
-<p>数据地址寄存器（AR）<br>保存当前cpu所访问的数据cache存储器中单元的地址</p>
-<p>通用寄存器（R0-R3）<br>当算术逻辑单元（ALU）执行算术或逻辑运算时，为ALU提供一个工作区。</p>
-<p>状态字寄存器（psw）<br>保存由算术指令和逻辑指令运算或测试结果建立的各种代码。</p>
-<p>微程序控制器</p>
-<p>优点<br>具有规整性，灵活性，可维护性等优点。</p>
-<p>基本思想<br>仿照通常的解题程序的方法，把操作控制信号编成所谓的微指令，存放到一个只读存储器里，当机器运行时，一条又一条的读出这些微指令，从而产生全机所需要的各种操作控制信号，使相应部件执行所规定的动作。</p>
-<p>微命令 控制部件通过控制线向执行部件发出各种控制命令。<br>微操作 执行部件接受微命令后所进行的操作</p>
-<p>控制存储器 控制存储器用来存放全部指令系统的微程序，是一种只读型存储器。</p>
-<p>微指令寄存器<br>存放由控制存储器读出的一条微指令信息。<br>决定将要访问的下一条微指令的地址</p>
-<h2 id="流水CPU"><a href="#流水CPU" class="headerlink" title="流水CPU"></a>流水CPU</h2><h3 id="并行处理技术"><a href="#并行处理技术" class="headerlink" title="并行处理技术"></a>并行处理技术</h3><p>时间并行<br>空间并行<br>时间并行+空间并行</p>
-<h3 id="流水线的结构"><a href="#流水线的结构" class="headerlink" title="流水线的结构"></a>流水线的结构</h3><h4 id="时空图"><a href="#时空图" class="headerlink" title="时空图"></a>时空图</h4><p>非流水线时空图<br>流水线时空图</p>
-<h4 id="流水线分类"><a href="#流水线分类" class="headerlink" title="流水线分类"></a>流水线分类</h4><p>指令流水线<br>算数流水线<br>处理机流水线  宏流水线，是指程序步骤的并行。</p>
-<h3 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h3><h4 id="资源相关"><a href="#资源相关" class="headerlink" title="资源相关"></a>资源相关</h4><p>多条指令进入流水线后在同一机器时钟周期内争用同一个功能部件所发生的冲突</p>
-<h4 id="数据相关"><a href="#数据相关" class="headerlink" title="数据相关"></a>数据相关</h4><p>先写后读（RAW）<br>对应真数据相关时的情况，下一条指令依赖于上一条指令的执行结果，<strong>必须先将结果写入之后再由下一条指令来读</strong>。如果先读的话读到的是旧值，不是运算的正确输入。</p>
-<p>先写后写（WAW）<br>这个对应于<strong>输出</strong>相关，比如最后将要输出的值为后一条指令的执行结果，可是这条指令却先执行并写入了，之后执行了上一条指令的写入操作，对应于输出的结果而言就出现冲突了。</p>
-<p>先读后写（WAR）<br>这个对应于名相关，指令在读取某一数据之前其读取的对象先被相关的指令写入了运算结果，这导致了读取的数据不是原来的数据，而是下一条指令运行的结果</p>
-<h4 id="控制相关"><a href="#控制相关" class="headerlink" title="控制相关"></a>控制相关</h4><p>延迟转移法<br>转移预测法</p>
-<h1 id="总线系统"><a href="#总线系统" class="headerlink" title="总线系统"></a>总线系统</h1><h2 id="总线的概念"><a href="#总线的概念" class="headerlink" title="总线的概念"></a>总线的概念</h2><p>构成计算机系统的互联结构，是多个系统功能部件进行数据传送的公共同路，借助与总线连接，计算机在个系统功能部件之间实现地址，数据和控制信息的交换，并在征用资源的基础上进行工作。</p>
-<p>总线分为3类<br>内部总线<br>cpu内部连接各寄存器及运算部件之间的总线。</p>
-<p>系统总线  cpu同计算机系统的其他高速功能部件，如存储器，通道等相互连接的总线。</p>
-<p>I/O总线<br>低速I/O设备之间相互连接的总线。</p>
-<h2 id="总线接口"><a href="#总线接口" class="headerlink" title="总线接口"></a>总线接口</h2><p>信息传送方式<br>串行传送 按顺序来传送表示一个数码的所有二进制位的脉冲信号，每次一位。<br>并行传送 对每个数据位都需要单独一条传输线。信息有多少二进制位组成，就需要多少传输线，从而使得二进制位数在不同的线上同时进行传输。<br>分时传送。<br>1 总线复用方式 某个传输线上既传送地址信息，又传送数据信息。<br>2 共享总线的部分分时使用总线。</p>
-<p>接口模块的功能<br>控制<br>靠指令信息来控制外围设备的动作</p>
-<p>缓冲<br>在外围设备和计算机系统其他部件之间用作一个缓冲器，以补偿各种设备在速度上的差异。 </p>
-<p>状态<br>监视外围设备的工作状态并保存状态信息</p>
-<p>转换<br>可以完成任何要求的数据转换</p>
-<p>整理<br>可以完成一些特别的功能，在需要时修改字计数器或当前内存地址寄存器</p>
-<p>程序中断<br>每当外围设备向cpu请求某种动作时，接口模块即发生一个中断请求信号到cpu</p>
-<h2 id="总线的总裁"><a href="#总线的总裁" class="headerlink" title="总线的总裁"></a>总线的总裁</h2><p>为了解决多个主设备同时竞争总线控制权的问题，必须具有总线仲裁部件。<br>一般采用优先级或公平策略进行仲裁。</p>
-<h3 id="集中式仲裁"><a href="#集中式仲裁" class="headerlink" title="集中式仲裁"></a>集中式仲裁</h3><p>每个功能模块有两条线连到总线控制器：一条是送往仲裁器的总线请求信号线BR，一条是仲裁器送出的总线授权信号线BG</p>
-<h4 id="链式查询方式"><a href="#链式查询方式" class="headerlink" title="链式查询方式"></a>链式查询方式</h4><p>总线授权信号BG串行的从一个I/O接口传送到下一个I/O接口。假如BG到达的接口无总线请求，则继续向下查询，假如BG到达的接口有总线请求，BG信号便不再向下查询。</p>
-<p>特点 在查询链中离总线仲裁器最近的设备具有最高优先级。</p>
-<p>优点： 只用很少几根线就能按一定优先次序实现总线仲裁，并且这种链式结构很容易扩充设备</p>
-<p>缺点  对询问链的电路很敏感，如果第i个设备的接口中有关链的电路有故障，那么第i个以后的设备都不能正常工作。查询链的优先级是固定的，如果优先级高的设备出现频繁的请求时，那么优先级低的设备将长期不能使用总线。</p>
-<h4 id="计时器定时查询方式"><a href="#计时器定时查询方式" class="headerlink" title="计时器定时查询方式"></a>计时器定时查询方式</h4><p>总线上任一设备要求使用总线时，通过BR线发出总线请求，总线仲裁器在接收到信号以后，在BS线为0的情况下让计数器开始计数，计数值通过一组地址线发现该设备。每个设备接口都有一个设备地址判别电路，当地址线上的计数值与请求总线的设备地址相一致时，该设备置1BS线，获得了总线使用权，此时中止计数查询</p>
-<p>优点  可以由计数器的初值方便的改变优先次序。</p>
-<h4 id="独立请求方式"><a href="#独立请求方式" class="headerlink" title="独立请求方式"></a>独立请求方式</h4><p>每一个共享总线的设备<strong>均有一对总线请求线BR和总线授权线BG</strong>，当设备要求使用总线时，便发出该设备的总线信号。总线仲裁器有一个排队电路，根据一定的优先次序决定优先相应哪一个设备，给设备已授权信号BG</p>
-<p>优点：相应速度快，对优先次序的控制相当灵活。他可以预先固定优先级，也可以通过程序来改变优先次序，还可以用屏蔽某个请求的方法，不响应来自无效设备的请求。</p>
-<h3 id="分布式仲裁"><a href="#分布式仲裁" class="headerlink" title="分布式仲裁"></a>分布式仲裁</h3><p>不需要集中的总线仲裁器，每个潜在的主方功能模块都有自己的仲裁号和仲裁器。当他们有总线请求时，把他们唯一的仲裁号发送到共享的仲裁总线上，每个仲裁器将仲裁总线上的号与自己做比较，如果仲裁总线上的号大，则他的总线请求不予响应，并撤销他的仲裁号。最后，获胜者的仲裁号保留在仲裁总线上。<br>分布式仲裁是以优先级仲裁策略为基础。</p>
-<h1 id="外存与IO设备"><a href="#外存与IO设备" class="headerlink" title="外存与IO设备"></a>外存与IO设备</h1><h2 id="磁盘存储设备"><a href="#磁盘存储设备" class="headerlink" title="磁盘存储设备"></a>磁盘存储设备</h2><h3 id="磁盘上信息的分布"><a href="#磁盘上信息的分布" class="headerlink" title="磁盘上信息的分布"></a>磁盘上信息的分布</h3><p>盘面的上下两面都能记录信息，通常把磁盘片表面称为记录面。记录面上一系列同心圆称为磁道</p>
-<p>磁道和扇区的排列称为格式。</p>
-<p>编号：磁道的编址是从外向内依次编号，最外一个同心圆叫0磁道，最里面的一个同心圆叫n磁道，n磁道里面的圆面积并不用来记录信息。</p>
-<p>扇区的编号有多种方法，可以连续编号，也可以间隔编号。</p>
-<p>可用n磁道m扇区的磁盘地址找到实际磁盘上与之相对应的记录区。</p>
-<p>对活动头磁盘组来说，<strong>磁盘地址是由记录面号（磁头号），磁道号和扇区号三部分组成。</strong></p>
-<p>在磁道中，信息是按区存放的，每个区中存放一定数量的字或字节，每个区存放字或字节数是相同的。</p>
-<p>磁盘存储器的每个扇区记录定长的数据，因此读/写操作是以扇区为单位一位一位串行进行的。</p>
-<p>每个记录块由头部空白段，序标段，数据段，校验字段以及尾部空白段组成。<br>空白段用来留出一定时间作为磁盘控制器的读写准备时间，序标被用来作为磁盘控制器的同步定时信号。数据段为本扇区所记录的数据。校验字段用来检验磁盘读出的数据是否正确。</p>
-<h3 id="磁盘存储器的技术指标"><a href="#磁盘存储器的技术指标" class="headerlink" title="磁盘存储器的技术指标"></a>磁盘存储器的技术指标</h3><p>存储密度：存储密度分为道密度，位密度和面密度。<br>道密度：沿磁盘半径方向单位长度的磁道数：   单位：道/英寸<br>位密度  磁道单位长度上能记录的二进制位数   单位  位/英寸<br>面密度  道密度和位密度的乘积</p>
-<p>存储容量 一个磁盘存储器所能存储的字节总数，称为磁盘存储器的存储容量。<br>分为格式化容量和非格式化容量，<br>格式化容量：按照某种特定的记录格式所能存储的信息总量，是用户可以真正使用的容量。<br>非格式化容量：磁记录表面可以利用的磁化单元总数。</p>
-<p>平均存取时间 是指从发出读写命令后，磁头从某一起始位置移动到新的记录位置，到开始从磁盘表面读出或写入信息加上传送数据所需要的时间。</p>
-<p>1.将磁头定位到所要求的磁道上所需要的时间称为找道时间 （最大找道时间与最小找道时间的平均值，目前平均找道时间为12ms）<br>2.找道完成后至磁道上需要访问的信息到达磁头上的时间称为等待时间 （磁盘旋转一周所需时间的一半）<br>3.数据传送时间</p>
-<p>计算</p>
-<p>平均存取时间<br>Ta=Ts（找道时间）+1/2<em>r（等待时间）+b/r</em>n（数据传送时间）<br>r 转速<br>b 传送的字节数</p>
-<p>数据传输率：磁盘存储器在单位时间内向主机传送数据的字节数。<br>Dr=nN(字节/秒)<br>n 磁盘旋转速度<br>N 每磁道字节数</p>
-<h1 id="输入输出系统"><a href="#输入输出系统" class="headerlink" title="输入输出系统　　"></a>输入输出系统　　</h1><h2 id="外围设备的速度分级与信息交换方式"><a href="#外围设备的速度分级与信息交换方式" class="headerlink" title="外围设备的速度分级与信息交换方式"></a>外围设备的速度分级与信息交换方式</h2><h3 id="外围设备的速度分级"><a href="#外围设备的速度分级" class="headerlink" title="外围设备的速度分级"></a>外围设备的速度分级</h3><p>速度极慢或简单的外围设备<br>如机械开关，显示二极管等。Cpu只要接收或发送数据就可以了。</p>
-<p>慢速或中速的外围设备<br>异步定时方式</p>
-<p>高速的外围设备<br>同步定时方式</p>
-<h3 id="信息交换方式"><a href="#信息交换方式" class="headerlink" title="信息交换方式"></a>信息交换方式</h3><h4 id="程序查询方式"><a href="#程序查询方式" class="headerlink" title="程序查询方式"></a>程序查询方式</h4><p>最简单的输入输出方式，数据在cpu和外围设备之间传送完全靠计算机程序控制</p>
-<p>优点：cpu的操作与外围设备的操作能够同步，硬件结构比较简单。<br>缺点：外围设备动作很慢，程序进入查询循环时将白白浪费掉cpu很多时间。</p>
-<h4 id="程序中断方式"><a href="#程序中断方式" class="headerlink" title="程序中断方式"></a>程序中断方式</h4><p>中断是外围设备主动告诉cpu，准备送出输入数据或接收输出数据的一种方法。<br>当一个中断发生后，cpu暂停他的现行程序，而转向中断处理程序，从而可以输入或输出一个数据。</p>
-<p>优点：节约了cpu的时间，是管理I/O操作的一个比较有有效的操作方法。</p>
-<h4 id="直接内存访问模式-DMA"><a href="#直接内存访问模式-DMA" class="headerlink" title="直接内存访问模式(DMA)"></a>直接内存访问模式(DMA)</h4><p>由硬件执行I/O交换的工作方式。这种方式及考虑到中断响应，同时又要节约中断开销。<br>DMA控制器从cpu完全接管对总线的控制，数据交换完全不经过cpu，而直接在内存和外围设备之间进行。</p>
-<p>优点：数据传送速度很高，传送速率仅受到内存访问时间的限制。<br>缺点：与中断方式相比，需要更多的硬件。</p>
-<p>使用场合：内存与高速外围设备之间大批数据交换的场合。</p>
-<h4 id="通道方式"><a href="#通道方式" class="headerlink" title="通道方式"></a>通道方式</h4><p>Cpu将部分权力下放给通道，通道是一个具有特殊功能的处理器。可以实现对外围设备的统一管理和外围设备与内存之间的数据传送。</p>
-<p>优点：大大提高效率<br>缺点：花费更多硬件为代价</p>
-<p>主要由程序实现：程序查询方式，查询中断方式<br>主要由硬件实现：DMA，通道</p>
-<h2 id="程序中断方式-1"><a href="#程序中断方式-1" class="headerlink" title="程序中断方式"></a>程序中断方式</h2><h3 id="中断的概念"><a href="#中断的概念" class="headerlink" title="中断的概念"></a>中断的概念</h3><p>在程序中断方式中，某一外设的数据准备就绪后，它主动向cpu发送信号，请求cpu暂时中断目前正在执行的程序而进行数据交换。</p>
-<h3 id="多级中断"><a href="#多级中断" class="headerlink" title="多级中断"></a>多级中断</h3><p>多级中断系统是指计算机系统中有相当多的中断源，根据各中断事件的轻重缓急程度不同而分成若干级别，每一中断级分配给一个优先权。</p>
-<p><strong>一般在某一级中断被响应后，要置“1”（关闭）本级和优先权低于本级的中断屏蔽发生器，置“0”（开放）更高级的中断屏蔽触发器，以此来实现正常的中断嵌套。</strong><br>具体题参考例2</p>
-<h3 id="中断控制器"><a href="#中断控制器" class="headerlink" title="中断控制器"></a>中断控制器</h3><p>中断优先级选择方式</p>
-<p>完全嵌套方式<br>一种固定优先级的方式，连至IR0的设备优先级最高，IR7优先级最低</p>
-<p>轮换优先级方式A<br>每个级别的中断保证都能够被处理，将给定的中断级别处理完后，立刻将它放在最低级别的位置中。</p>
-<p>轮换优先级方式B<br>要求CPU可在任何时间规定最优优先级，然后顺序的规定其他IR线上的优先级。</p>
-<p>查询方式<br>由cpu访问8259的中断状态寄存器，一个状态字能够表示出正在请求的最高优先级IR线。</p>
-<p>两种屏蔽方式</p>
-<p>简单屏蔽方式<br>提供8位屏蔽字，每位对应着各自的IR线。被置位的任一位则禁止了对应IR线上的中断。</p>
-<p>特殊屏蔽方式<br>允许cpu让来自低优先级的外设中断请求去中断高优先级的服务程序。</p>
-<h2 id="DMA方式"><a href="#DMA方式" class="headerlink" title="DMA方式"></a>DMA方式</h2><p>是一种完全由硬件执行I/O交换的工作方式。</p>
-<p>DMA控制器从cpu完全接管对总线的控制。</p>
-<p>优点：速度快</p>
-<h3 id="DMA传送方式"><a href="#DMA传送方式" class="headerlink" title="DMA传送方式"></a>DMA传送方式</h3><p>停止CPU访内<br>周期挪用<br>DMA与cpu交替访内</p>
-
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/yzhiwei.github.io/2019/07/06/计组复习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
