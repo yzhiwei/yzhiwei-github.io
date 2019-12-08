@@ -87,7 +87,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/05/egCJit.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/04/eycwRJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/04/eygeyR.png">
-<meta property="og:updated_time" content="2019-08-09T15:33:28.998Z">
+<meta property="og:updated_time" content="2019-08-09T16:51:04.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图论">
 <meta name="twitter:description" content="基本概念根据边的方向： 有向图，无向图 路径： 从某个点出发经过若干条边到达另一个点 简单路径： 不重复经过某个点的路径 度数： 无向图中一个点连出去边的个数 连通： 两个点通过路径相连 拓扑图： 没有环的图 存图邻接矩阵邻接表利用stl里的vector存图 将点i的出边，存在一个vector数组中 12345678#define maxn 5250    //最大点数; struct node&amp;">
@@ -402,7 +402,8 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 5250    <span class="comment">//最大点数;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> to,v;    <span class="comment">//to代表到哪个顶点，v代表权值</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">vector</span>&lt;node&gt; e[maxn];    <span class="comment">//每个点都有自己的邻接表，vector是一个node类型的数组</span></span><br></pre></td></tr></table></figure>
 <p>插入边<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span>    <span class="comment">//u-&gt;v = w;</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    node tmp;</span><br><span class="line">    tmp.to = v;</span><br><span class="line">    tmp.v = w;</span><br><span class="line">    e[u].push_back(tmp);    <span class="comment">//关于顶点u的邻接表</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>遍历<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; e[<span class="number">1</span>].size(); i++)    <span class="comment">//遍历1号顶点所有出边</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>&lt;&lt;e[<span class="number">1</span>][i].to&lt;&lt;e[<span class="number">1</span>][i].v&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="最短路问题"><a href="#最短路问题" class="headerlink" title="最短路问题"></a>最短路问题</h1><h2 id="v1"><a href="#v1" class="headerlink" title="v1"></a>v1</h2><p>给定一张n个点m条边的有向图，每条边的长度为1，求1号点到其他点的最短路径</p>
+<h1 id="最短路问题"><a href="#最短路问题" class="headerlink" title="最短路问题"></a>最短路问题</h1><p><a href="https://blog.csdn.net/qq_36386435/article/details/77403223?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">https://blog.csdn.net/qq_36386435/article/details/77403223?tdsourcetag=s_pctim_aiomsg</a></p>
+<h2 id="v1"><a href="#v1" class="headerlink" title="v1"></a>v1</h2><p>给定一张n个点m条边的有向图，每条边的长度为1，求1号点到其他点的最短路径</p>
 <p>如果1到x的最短路为<code>L</code>,那么肯定存在一个y，使得1到y的最短路为<code>L-1</code>，且y到x有边。</p>
 <p>用队列维护这个拓展的过程</p>
 <p>时间复杂度 O（n+m）</p>
@@ -767,7 +768,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.8k</span>
+    <span title="Site words total count">19.7k</span>
   
 </div>
 

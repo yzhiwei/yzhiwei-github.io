@@ -2046,7 +2046,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e421b9;
+  background: #e75dfb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3227,6 +3227,22 @@ body {
 }
 img.img-topic {
   width: 100%;
+}
+.back-to-top {
+  right: 60px;
+  width: 70px;
+  height: 900px;
+  top: -900px;
+  bottom: unset;
+  transition: all 0.5s ease-in-out;
+  background: url("/images/scroll.png");
+}
+.back-to-top > i {
+  display: none;
+}
+.back-to-top.back-to-top-on {
+  bottom: unset;
+  top: calc(100vh - 900px - 200px);
 }
 @-moz-keyframes heartAnimate {
   0%, 100% {
